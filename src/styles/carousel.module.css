@@ -1,0 +1,123 @@
+.container {
+  /* border: 1px solid black; */
+  width: 90vw;
+  height: 50vh;
+  position: absolute;
+  color: white;
+}
+
+.imageBox {
+  width: 70vw;
+  height: 20vh;
+  /* border: 1px solid black; */
+  position: relative;
+  left: 10vw;
+  bottom: 1vh;
+  border-radius: 10px;
+}
+
+.messageBox {
+  width: 70vw;
+  height: 20vh;
+  /* border: 1px solid black; */
+  position: relative;
+  left: 10vw;
+  color: white;
+  margin-top: 1vh;
+}
+
+.messageBox p {
+  margin-bottom: 1.5vh;
+}
+
+.btnWeb {
+  max-width: 3.5cm;
+  height: 1.2cm;
+  text-align: center;
+  padding-top: 1.5vh;
+  background-color: #6a5bd0;
+  border-radius: 4px;
+  color: white;
+}
+
+.btnWeb img {
+  width: 20px;
+  position: relative;
+  top: 0.5vh;
+}
+
+@media (min-width: 464px) and (max-width: 1024px) {
+  .container {
+    width: 95vw;
+    height: 75vh;
+  }
+
+  .imageBox {
+    width: 75vw;
+    height: 40vh;
+  }
+
+  .btnWeb {
+    max-width: 5.5cm;
+    height: 1.7cm;
+    text-align: center;
+    padding-top: 1.5vh;
+    background-color: #6a5bd0;
+    border-radius: 4px;
+    color: white;
+  }
+}
+
+/* breakpoint: { max: 3000, min: 1024 }, */
+
+@media (min-width: 1024px) and (max-width: 3000px) {
+  .container {
+    width: 95vw;
+    height: 60vh;
+  }
+
+  .imageBox {
+    width: 38vw;
+    height: 50vh;
+  }
+
+  .btnWeb {
+    max-width: 5.5cm;
+    height: 1.7cm;
+    text-align: center;
+    padding-top: 1.5vh;
+    background-color: #6a5bd0;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .messageBox {
+    width: 35vw;
+    height: 2vh;
+    position: relative;
+    left: 50vw;
+    bottom: 50vh;
+    color: white;
+    margin-top: 1vh;
+  }
+
+  .messageBox p {
+    margin-bottom: 3vh;
+  }
+
+  .btnWeb {
+    max-width: 3.5cm;
+    height: 1.2cm;
+    text-align: center;
+    padding-top: 1.5vh;
+    background-color: #6a5bd0;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .btnWeb img {
+    width: 20px;
+    position: relative;
+    top: 0.5vh;
+  }
+}
