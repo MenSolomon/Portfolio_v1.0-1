@@ -500,6 +500,7 @@
 .section6 ul li {
   font-size: 1.2em;
   margin-bottom: 2vh;
+  cursor: pointer;
 }
 
 .section6 ul li:nth-child(5) {
@@ -702,6 +703,7 @@
     visibility: visible;
     margin-left: 16vw;
     margin-top: 13vh;
+    cursor: pointer;
   }
 
   .scrollDown li:last-child img {

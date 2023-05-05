@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import css from "../styles/home.module.css";
 import codepen from "../images/codepen.png";
 import github from "../images/github.png";
@@ -37,6 +37,7 @@ import downArrow from "../images/downArrow.png";
 import Lenis from "@studio-freight/lenis";
 import TypeWriterEffect from "react-typewriter-effect";
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Home = () => {
   const form = useRef();
@@ -80,6 +81,22 @@ const Home = () => {
   const btnColor = {
     color: "white",
   };
+
+  const scrollpage = (component) => {
+    lenis.scrollTo(component, {
+      duration: 2,
+      immediate: false,
+      direction: "vertical",
+      easing: (x) =>
+        x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+      gestureDirection: "vertical",
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+  };
+
   return (
     <>
       <style>
@@ -154,18 +171,22 @@ transition: 0.5s
   background-color:${theme} ;
 }
 
+.pcMenuStrip li{
+  cursor: pointer
+}
+
 `}
       </style>
 
-      <div className={`${css.container} container `}>
+      <div className={`${css.container} container `} id="homes">
         <ul className={`${css.pcMenuStrip} sectionTheme pcMenuStrip`}>
           <li>Michael</li>
 
-          <li> Home </li>
-          <li> About </li>
-          <li> Skills </li>
-          <li> Portfolio </li>
-          <li> Contactme </li>
+          <li onClick={() => scrollpage(homes)}> Home </li>
+          <li onClick={() => scrollpage(about)}> About </li>
+          <li onClick={() => scrollpage(skills)}> Skills </li>
+          <li onClick={() => scrollpage(portfolio)}> Portfolio </li>
+          <li onClick={() => scrollpage(contact)}> Contactme </li>
           <li>
             <img src={color == "white" ? light : dark} onClick={handleTheme} />
           </li>
@@ -210,7 +231,7 @@ transition: 0.5s
           <div className={css.btnaboutMe} style={btnColor}>
             About Me
           </div>
-          <ul className={css.scrollDown}>
+          <ul className={css.scrollDown} onClick={() => scrollpage(foot)}>
             <li>
               <img src={mouse} className={css.mouse} />
             </li>
@@ -234,7 +255,10 @@ transition: 0.5s
           </ul>
         </div>
 
-        <div className={`${css.section} ${css.section2} sectionTheme `}>
+        <div
+          className={`${css.section} ${css.section2} sectionTheme `}
+          id="about"
+        >
           <span>
             <h1>About Me</h1> <h4>My Introduction</h4>
           </span>
@@ -271,6 +295,7 @@ transition: 0.5s
 
         <div
           className={`${css.section} ${css.section3} sectionTheme `}
+          id="skills"
           style={{ backgroundImage: `url(${sky})`, backgroundSize: "cover" }}
         >
           {/* <div className={`${css.space}`}>
@@ -332,14 +357,20 @@ transition: 0.5s
           </div>
         </div>
 
-        <div className={`${css.section} ${css.section4} sectionTheme `}>
+        <div
+          className={`${css.section} ${css.section4} sectionTheme `}
+          id="portfolio"
+        >
           <h1 style={styleColor}>Portfolio</h1>
           <h3 style={styleColor}> Most recent works </h3>
 
           <Carousels className={css.carousel} />
         </div>
 
-        <div className={`${css.section} ${css.section5} sectionTheme `}>
+        <div
+          className={`${css.section} ${css.section5} sectionTheme `}
+          id="contact"
+        >
           <h1 style={styleColor}> Contact Me </h1>
           <h3 style={styleColor}> Get in touch </h3>
 
@@ -454,24 +485,27 @@ transition: 0.5s
 
         <div
           className={`${css.section} ${css.section6} sectionTheme `}
+          id="foot"
           style={{
             backgroundColor: color == "black" ? "#6a5bd0" : "#0D0E1C",
             color: "white",
           }}
         >
-          <h1 style={{ color: "white" }}>Michael</h1>
+          <h1 style={{ color: "white" }} onClick={() => scrollpage(homes)}>
+            Michael
+          </h1>
           <h3 style={{ color: "white" }}>Frontend developer</h3>
           <ul>
-            <li>
+            <li onClick={() => scrollpage(about)}>
               <h3>About Me</h3>
             </li>
-            <li>
+            <li onClick={() => scrollpage(skills)}>
               <h3>Skills</h3>
             </li>
-            <li>
+            <li onClick={() => scrollpage(portfolio)}>
               <h3>Portfolio</h3>
             </li>
-            <li>
+            <li onClick={() => scrollpage(contact)}>
               <h3>Contact me</h3>
             </li>
 

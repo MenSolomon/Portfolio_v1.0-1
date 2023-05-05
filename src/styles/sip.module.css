@@ -114,6 +114,26 @@
   text-align: center;
 }
 
+.analysisHeader {
+  visibility: hidden;
+}
+
+.analysisHeaderAnimation {
+  animation: analysisAnimate 0.6s forwards;
+  visibility: visible;
+}
+
+@keyframes analysisAnimate {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+    transition: ease-in-out;
+  }
+}
+
 .imageHolder {
   width: 30vh;
   height: 30vh;
@@ -121,6 +141,27 @@
   margin-top: 4vh;
   margin-left: 11vw;
   border-radius: 7px;
+  visibility: hidden;
+}
+
+.caseImageAnimation {
+  animation: caseAnimate 1.2s forwards;
+  visibility: visible;
+}
+
+@keyframes caseAnimate {
+  0% {
+    position: relative;
+    left: 15vw;
+    opacity: 0.9;
+    transition: ease-in-out;
+  }
+
+  100% {
+    position: relative;
+    left: 0vw;
+    opacity: 1;
+  }
 }
 
 .customerMessage {
@@ -147,6 +188,7 @@
   display: flex;
   margin-left: 10vw;
   list-style-type: none;
+  visibility: hidden;
 }
 
 .projectColor li {
@@ -177,6 +219,29 @@
   border: none;
 }
 
+.colorCodesAnimation {
+  animation: colorAnimate 0.9s forwards;
+  visibility: visible;
+}
+
+@keyframes colorAnimate {
+  0% {
+    position: relative;
+    top: 8vh;
+    opacity: 0;
+    transition: ease-in-out;
+  }
+
+  10% {
+  }
+
+  100% {
+    position: relative;
+    top: 0vh;
+    opacity: 1;
+  }
+}
+
 .projectFont {
   /* border: 1px solid black; */
   width: 35vh;
@@ -186,6 +251,7 @@
   text-align: justify;
   margin-bottom: 3vh;
   display: flex;
+  visibility: hidden;
 }
 
 .projectFont div {
@@ -209,6 +275,25 @@
   border-right: 1px solid rgba(0, 0, 0, 0.068);
 }
 
+.fontCodeAnimation {
+  animation: fontAnimate 0.7s forwards;
+  visibility: visible;
+  position: relative;
+}
+
+@keyframes fontAnimate {
+  0% {
+    top: 10vh;
+    opacity: 0;
+    transition: ease-in-out;
+  }
+
+  100% {
+    top: 0vh;
+    opacity: 1;
+  }
+}
+
 .section4 h5 {
   color: #e17b1a;
 }
@@ -227,10 +312,42 @@
 .section5 ul li {
   font-size: 1em;
   margin-bottom: 2vh;
+  cursor: pointer;
 }
 
 .section5 ul li:nth-child(5) {
   text-align: center;
+}
+
+.coverPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: #d8ab56;
+  z-index: 2000;
+  position: fixed;
+}
+
+.coverPage2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e17b1a;
+  z-index: 2000;
+  position: fixed;
+}
+
+.animateLi {
+  list-style-type: none;
+  display: grid;
+  left: 40vw;
+  position: absolute;
+  top: 40vh;
+}
+
+.animateLi li {
+  width: 15vw;
+  height: 4vh;
+  background-color: white;
+  margin-top: 0.3vh;
 }
 
 /* TABLET CSS  max: 1024, min: 464 */
@@ -457,6 +574,13 @@
     font-size: 0.8em;
     /* margin-top: -10vh; */
     margin-left: -3vw;
+    /* border: 1px solid black; */
+  }
+
+  .section5 ul li h3 {
+    /* border: 1px solid black; */
+    cursor: pointer;
+    z-index: 90;
   }
 
   .section5 ul li:nth-child(4) {
