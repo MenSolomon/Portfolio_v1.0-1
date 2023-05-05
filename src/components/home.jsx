@@ -34,9 +34,26 @@ import dark from "../images/night.png";
 import light from "../images/day.png";
 import mouse from "../images/mouse.png";
 import downArrow from "../images/downArrow.png";
+import Lenis from "@studio-freight/lenis";
+import TypeWriterEffect from "react-typewriter-effect";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const form = useRef();
+  const nameRef = document.querySelector(".container");
+
+  const lenis = new Lenis({});
+
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 
   const [theme, setTheme] = useState("#191624");
   const [color, setColor] = useState("white");
@@ -140,9 +157,10 @@ transition: 0.5s
 `}
       </style>
 
-      <div className={`${css.container}  `}>
+      <div className={`${css.container} container `}>
         <ul className={`${css.pcMenuStrip} sectionTheme pcMenuStrip`}>
           <li>Michael</li>
+
           <li> Home </li>
           <li> About </li>
           <li> Skills </li>
@@ -170,7 +188,17 @@ transition: 0.5s
 
           <img className={css.logo} src={logo} alt="Name Logo" />
           <div className={css.messageBox}>
-            <h1> Hi, I am Michael Solomon </h1>
+            <h1>
+              <TypeWriterEffect
+                textStyle={{ fontFamily: "Red Hat Display", fontSize: "0.9em" }}
+                startDelay={50}
+                cursorColor="black"
+                text="Hi, I am Michael Solomon "
+                typeSpeed={90}
+
+                // scrollArea={myAppRef}
+              ></TypeWriterEffect>
+            </h1>
             <h3>Frontend Developer</h3>
             <p>
               I am a software engineer living in the San Francisco Bay Area. I

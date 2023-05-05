@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import css from "/portfolio_v1.0.1/portfolio_v1.0.1/src/styles/carousel.module.css";
 import rightArrow from "../../images/rightArrow.png";
 import project1 from "../../images/case1.png";
+import { Link } from "react-router-dom";
 
 const Carousels = () => {
   const responsive = {
@@ -57,11 +58,12 @@ const Carousels = () => {
               Website adaptable to all devices, with ui components and animated
               interactions. asdasdasdsdsadasdasdas asdasd asdas asd asdasd
             </p>
-
-            <div className={css.btnWeb}>
-              {" "}
-              Visit Project <img src={rightArrow} />
-            </div>
+            <Link to="/caseStudy1.sip&Savour">
+              <div className={css.btnWeb}>
+                {" "}
+                Visit Project <img src={rightArrow} />
+              </div>
+            </Link>
           </section>
         </div>
 
