@@ -4,6 +4,8 @@ import Home from "./components/home.jsx";
 import { AnimatePresence } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import SipAndSavor from "./components/SipAndSavor.jsx";
+import Chatteau from "./components/Chatteau.jsx";
+import Crypto from "./components/CryptoYard.jsx";
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,11 @@ function App() {
             path="/caseStudy1.sip&Savour"
             element={<SipAndSavor />}
           ></Route>
+          <Route
+            path="/caseStudy2.chatteau&Nourriture"
+            element={<Chatteau />}
+          ></Route>
+          <Route path="/caseStudy2.cryptoYard" element={<Crypto />}></Route>
         </Routes>
       </AnimatePresence>
     </div>

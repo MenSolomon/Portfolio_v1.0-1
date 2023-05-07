@@ -97,6 +97,14 @@ const Home = () => {
     });
   };
 
+  const bounceTransition = {
+    y: {
+      duration: 0.4,
+      yoyo: Infinity,
+      ease: "easeOut",
+    },
+  };
+
   return (
     <>
       <style>
@@ -169,6 +177,7 @@ transition: 0.5s
 .pcMenuStrip{
 
   background-color:${theme} ;
+
 }
 
 .pcMenuStrip li{
@@ -209,13 +218,20 @@ transition: 0.5s
 
           <img className={css.logo} src={logo} alt="Name Logo" />
           <div className={css.messageBox}>
-            <h1>
+            <h1
+              style={{
+                borderColor: "red",
+                borderWidth: "1px",
+                width: "80%",
+                height: "15%",
+              }}
+            >
               <TypeWriterEffect
-                textStyle={{ fontFamily: "Red Hat Display", fontSize: "0.9em" }}
+                textStyle={{ fontSize: "0.9em" }}
                 startDelay={50}
-                cursorColor="black"
+                cursorColor="white"
                 text="Hi, I am Michael Solomon "
-                typeSpeed={90}
+                typeSpeed={120}
 
                 // scrollArea={myAppRef}
               ></TypeWriterEffect>
@@ -231,7 +247,14 @@ transition: 0.5s
           <div className={css.btnaboutMe} style={btnColor}>
             About Me
           </div>
-          <ul className={css.scrollDown} onClick={() => scrollpage(foot)}>
+          <motion.ul
+            className={css.scrollDown}
+            onClick={() => scrollpage(foot)}
+            transition={bounceTransition}
+            animate={{
+              y: ["100%", "-100%"],
+            }}
+          >
             <li>
               <img src={mouse} className={css.mouse} />
             </li>
@@ -239,7 +262,7 @@ transition: 0.5s
             <li>
               <img src={downArrow} />
             </li>
-          </ul>
+          </motion.ul>
 
           <ul className={`${css.menuStrip} menuStrips`}>
             <li> Michael </li>
@@ -364,7 +387,7 @@ transition: 0.5s
           <h1 style={styleColor}>Portfolio</h1>
           <h3 style={styleColor}> Most recent works </h3>
 
-          <Carousels className={css.carousel} />
+          <Carousels mycolor={color} className={css.carousel} />
         </div>
 
         <div

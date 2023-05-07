@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import css from "../styles/sip.module.css";
-import sipPic from "../images/sipPic.jpg";
+import css from "../styles/chatteau.module.css";
+import sipPic from "../images/food1.jpg";
 import rightArrow from "../images/right-arrow.png";
 import caseImage from "../images/case1.png";
 import { Link } from "react-router-dom";
@@ -14,9 +14,8 @@ import { useLocation } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 import { useInView } from "react-intersection-observer";
 
-const SipAndSavor = () => {
+const Chatteau = () => {
   const lenis = new Lenis({});
-
   lenis.on("scroll", (e) => {
     console.log(e);
   });
@@ -96,7 +95,7 @@ const SipAndSavor = () => {
       </motion.div>
 
       <ul className={css.menuStrip} id="menu">
-        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+        <Link to="/" style={{ color: "#292e41", textDecoration: "none" }}>
           {" "}
           <li> Home </li>{" "}
         </Link>{" "}
@@ -174,13 +173,13 @@ const SipAndSavor = () => {
           ref={colorHide}
         >
           <li>
-            <div> </div> Yellow
+            <div> </div> Deep Blue
           </li>
           <li>
-            <div> </div> Black
+            <div> </div> Red
           </li>
           <li>
-            <div> </div> White
+            <div> </div> Light Blue
           </li>
         </ul>
 
@@ -207,10 +206,11 @@ const SipAndSavor = () => {
           </div>
         </div>
       </div>
-      <Link to="/caseStudy2.chatteau&Nourriture">
+
+      <Link to="/caseStudy2.cryptoYard">
         <div className={`${css.section4} ${css.section} `} id="nextwork">
           <h5>NextWork</h5>
-          <h1>Chatteau Nourriture</h1>
+          <h1>Crypto Yard</h1>
         </div>
       </Link>
       <div className={`${css.section5} ${css.section} `}>
@@ -234,4 +234,4 @@ const SipAndSavor = () => {
   );
 };
 
-export default SipAndSavor;
+export default Chatteau;

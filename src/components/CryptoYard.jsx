@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import css from "../styles/sip.module.css";
-import sipPic from "../images/sipPic.jpg";
+import React, { useEffect, useRef } from "react";
+import css from "../styles/crypto.module.css";
+import sipPic from "../images/food1.jpg";
 import rightArrow from "../images/right-arrow.png";
 import caseImage from "../images/case1.png";
 import { Link } from "react-router-dom";
@@ -13,10 +13,11 @@ import { yoyoVariant3 } from "../animationVariants/sipAndSavour-Variant";
 import { useLocation } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 import { useInView } from "react-intersection-observer";
+import laptop from "../images/laptop.jpg";
+import cryptoCase from "../images/cryptoCase.png";
 
-const SipAndSavor = () => {
+const Crypto = () => {
   const lenis = new Lenis({});
-
   lenis.on("scroll", (e) => {
     console.log(e);
   });
@@ -72,6 +73,46 @@ const SipAndSavor = () => {
     triggerOnce: true,
   });
 
+  const roleRef = useRef(null);
+  const contextRef = useRef(null);
+
+  let role = "Front-End Developer";
+  let context = "Personal Project";
+  let period = "2023";
+
+  const letters11 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbersChange = "01234567912345678901234567";
+
+  const changeText = (lettersArray, textArray, reference) => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const chineseLetters = "其為矣而好作亂者君子務本";
+    // const letters = "ABCDEFGHIJKLMN其為矣而好作亂者君子務本";
+
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+      reference.current.textContent = reference.current.textContent
+        .split("")
+        .map((letter, index) =>
+          index < iterations
+            ? textArray[index]
+            : lettersArray[Math.floor(Math.random() * 26)]
+        )
+        .join("");
+
+      if (iterations >= textArray.length) clearInterval(interval);
+
+      iterations += 1 / 5;
+    }, 60);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      changeText(letters11, role, roleRef);
+      changeText(letters11, context, contextRef);
+    }, 4500);
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
@@ -105,10 +146,46 @@ const SipAndSavor = () => {
       </ul>
       <div
         className={`${css.section1} ${css.section} `}
-        style={{
-          backgroundImage: `url(${sipPic})`,
-        }}
-      ></div>
+        // style={{
+        //   backgroundImage: `url(${sipPic})`,
+        // }}
+      >
+        <div
+          className={css.laptopPic}
+          // style={{ backgroundImage: `url(${laptop})`, backgroundSize: "cover" }}
+          style={{ backgroundColor: "red" }}
+        >
+          <div
+            style={{
+              backgroundImage: `url(${laptop})`,
+              backgroundSize: "cover",
+              width: "100%",
+              height: "100%",
+            }}
+          ></div>
+        </div>
+        <div className={css.fontArea}></div>
+        <div className={css.textArea}>
+          <ul className={css.projectInfo}>
+            <li>
+              <span style={{ cursor: "pointer", zIndex: "10" }}> Role: </span>{" "}
+              <span ref={roleRef} value={role}>
+                Front-End Developer
+              </span>
+            </li>
+            <li>
+              <span> Context:</span>
+              <span ref={contextRef} value={context}>
+                Personal Project
+              </span>
+            </li>
+            <li>
+              <span> Period:</span>
+              <span> 2023 </span>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className={`${css.section2} ${css.section} `}>
         <h1>SIP AND SAVOR</h1>
 
@@ -174,13 +251,13 @@ const SipAndSavor = () => {
           ref={colorHide}
         >
           <li>
-            <div> </div> Yellow
-          </li>
-          <li>
-            <div> </div> Black
+            <div> </div> Deep Blue
           </li>
           <li>
             <div> </div> White
+          </li>
+          <li>
+            <div> </div> Light Blue
           </li>
         </ul>
 
@@ -207,12 +284,10 @@ const SipAndSavor = () => {
           </div>
         </div>
       </div>
-      <Link to="/caseStudy2.chatteau&Nourriture">
-        <div className={`${css.section4} ${css.section} `} id="nextwork">
-          <h5>NextWork</h5>
-          <h1>Chatteau Nourriture</h1>
-        </div>
-      </Link>
+      <div className={`${css.section4} ${css.section} `} id="nextwork">
+        <h5>NextWork</h5>
+        <h1>Upcoming Project</h1>
+      </div>
       <div className={`${css.section5} ${css.section} `}>
         <h1 className={css.footerH1}>Michael</h1>
         <h3 className={css.footerH3}>Frontend developer</h3>
@@ -234,4 +309,4 @@ const SipAndSavor = () => {
   );
 };
 
-export default SipAndSavor;
+export default Crypto;

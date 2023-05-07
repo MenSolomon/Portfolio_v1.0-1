@@ -22,7 +22,7 @@
 }
 
 .section1 {
-  background-color: gray;
+  background-color: white;
   grid-area: homepic;
   background-repeat: no-repeat;
   background-size: 250% 100%;
@@ -30,11 +30,12 @@
 }
 
 .section2 {
-  background-color: #e17b1a;
+  background-color: #021528;
+  color: white;
 }
 
 .section3 {
-  background-color: #d8ab56;
+  background-color: #d9d9d9;
   padding-top: 5vh;
 }
 
@@ -43,7 +44,8 @@
 }
 
 .section5 {
-  background-color: #e17b1a;
+  background-color: #1b1d26;
+  color: white;
 }
 
 .menuStrip {
@@ -62,6 +64,7 @@
   border-top-left-radius: 5%;
   opacity: 0.97;
   z-index: 1000;
+  color: #292e41;
 }
 
 .menuStrip li {
@@ -207,15 +210,16 @@
 
 .projectColor li:nth-child(1) div {
   border: none;
+  background-color: #292e41;
 }
 
 .projectColor li:nth-child(2) div {
-  background-color: black;
+  background-color: white;
   border: none;
 }
 
 .projectColor li:last-child div {
-  background-color: white;
+  background-color: #0f929a;
   border: none;
 }
 
@@ -295,7 +299,7 @@
 }
 
 .section4 h5 {
-  color: #e17b1a;
+  color: #00c6e2;
 }
 
 .section4 h1 {
@@ -322,7 +326,7 @@
 .coverPage {
   width: 100vw;
   height: 100vh;
-  background-color: #d8ab56;
+  background-color: #d9d9d9;
   z-index: 2000;
   position: fixed;
 }
@@ -330,7 +334,7 @@
 .coverPage2 {
   width: 100vw;
   height: 100vh;
-  background-color: #e17b1a;
+  background-color: #021528;
   z-index: 2000;
   position: fixed;
 }
@@ -450,21 +454,21 @@
     font-size: 1.2em;
   }
 
-  .section1 {
-    background-size: cover;
-  }
-
   .menuStrip {
-    height: 6.1vh;
+    height: 13vh;
     z-index: 1000;
     font-size: 1em;
     position: absolute;
-    top: 2vh;
+    top: 0vh;
     background: transparent;
-    color: white;
+    color: #292e41;
+    font-weight: 700;
     /* border: 1px solid white; */
     padding-left: 70vw;
     padding-right: 2vw;
+    background-color: #021528;
+    padding-top: 3vh;
+    color: white;
   }
 
   .section2 h1 {
@@ -541,7 +545,7 @@
   }
 
   .section4 h5 {
-    color: #e17b1a;
+    color: #00c6e2;
     margin-left: 14vw;
     margin-top: 3vh;
     z-index: 10;
@@ -549,7 +553,7 @@
   }
 
   .section4 h1 {
-    color: #00c6e2;
+    color: #292e41;
     margin-left: 14vw;
     z-index: 10;
     cursor: pointer;
@@ -603,4 +607,81 @@
   .section4:hover {
     box-shadow: inset 100vw 0 0 0 rgba(0, 0, 0, 0.864);
   }
+
+  .section1 {
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 0.8fr 0.2fr;
+    grid-template-areas: "font laptopPic" "text text";
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+  }
+
+  .laptopPic {
+    grid-area: laptopPic;
+    /* position: absolute; */
+    /* width: 50vw;
+    height: 70vh; */
+    /* border: 1px solid black; */
+    /* position: relative; */
+    /* left: 45vw;
+    top: 15vh; */
+  }
+
+  .fontArea {
+    grid-area: font;
+    /* background-color: yellow; */
+  }
+
+  .textArea {
+    grid-area: text;
+    /* background-color: blue; */
+  }
+
+  .laptopPic2 {
+    width: 27vw;
+    height: 35.4vh;
+    /* border: 1px solid yellowgreen; */
+
+    /* position: relative; */
+  }
+
+  .projectInfo {
+    list-style-type: none;
+
+    display: flex;
+    margin-left: 16vw;
+    font-style: normal;
+  }
+
+  .projectInfo li {
+    margin-right: 2vw;
+    min-width: 25vw;
+    /* border: 1px solid red; */
+  }
+
+  .projectInfo li:last-child {
+    min-width: 12vw;
+  }
+  .projectInfo li span {
+    color: #021528;
+    font-weight: 600;
+  }
+
+  /* .coverPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: #d9d9d9;
+  z-index: 2000;
+  position: fixed;
+}
+
+.coverPage2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #021528;
+  z-index: 2000;
+  position: fixed;
+} */
 }

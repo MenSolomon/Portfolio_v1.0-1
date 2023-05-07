@@ -30,11 +30,11 @@
 }
 
 .section2 {
-  background-color: #e17b1a;
+  background-color: #292e41a4;
 }
 
 .section3 {
-  background-color: #d8ab56;
+  background-color: #00c6e2;
   padding-top: 5vh;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .section5 {
-  background-color: #e17b1a;
+  background-color: #292e41a4;
 }
 
 .menuStrip {
@@ -62,6 +62,7 @@
   border-top-left-radius: 5%;
   opacity: 0.97;
   z-index: 1000;
+  color: #292e41;
 }
 
 .menuStrip li {
@@ -207,15 +208,16 @@
 
 .projectColor li:nth-child(1) div {
   border: none;
+  background-color: #292e41;
 }
 
 .projectColor li:nth-child(2) div {
-  background-color: black;
+  background-color: #ff0000;
   border: none;
 }
 
 .projectColor li:last-child div {
-  background-color: white;
+  background-color: #0f929a;
   border: none;
 }
 
@@ -295,7 +297,7 @@
 }
 
 .section4 h5 {
-  color: #e17b1a;
+  color: #00c6e2;
 }
 
 .section4 h1 {
@@ -322,7 +324,7 @@
 .coverPage {
   width: 100vw;
   height: 100vh;
-  background-color: #d8ab56;
+  background-color: #292e41;
   z-index: 2000;
   position: fixed;
 }
@@ -330,7 +332,7 @@
 .coverPage2 {
   width: 100vw;
   height: 100vh;
-  background-color: #e17b1a;
+  background-color: #00c6e2;
   z-index: 2000;
   position: fixed;
 }
@@ -461,7 +463,8 @@
     position: absolute;
     top: 2vh;
     background: transparent;
-    color: white;
+    color: #292e41;
+    font-weight: 700;
     /* border: 1px solid white; */
     padding-left: 70vw;
     padding-right: 2vw;
@@ -541,7 +544,7 @@
   }
 
   .section4 h5 {
-    color: #e17b1a;
+    color: #00c6e2;
     margin-left: 14vw;
     margin-top: 3vh;
     z-index: 10;
@@ -549,7 +552,7 @@
   }
 
   .section4 h1 {
-    color: #00c6e2;
+    color: #292e41;
     margin-left: 14vw;
     z-index: 10;
     cursor: pointer;

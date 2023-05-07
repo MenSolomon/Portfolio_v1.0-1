@@ -6,7 +6,7 @@ import rightArrow from "../../images/rightArrow.png";
 import project1 from "../../images/case1.png";
 import { Link } from "react-router-dom";
 
-const Carousels = () => {
+const Carousels = (props) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -51,7 +51,10 @@ const Carousels = () => {
           >
             {" "}
           </figure>
-          <section className={css.messageBox}>
+          <section
+            className={css.messageBox}
+            style={{ color: `${props.mycolor}` }}
+          >
             <h2>Modern</h2>
             <p>
               {" "}
