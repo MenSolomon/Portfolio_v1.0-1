@@ -82,7 +82,10 @@ const Carousels = (props) => {
           >
             {" "}
           </figure>
-          <section className={css.messageBox}>
+          <section
+            className={css.messageBox}
+            style={{ color: `${props.mycolor}` }}
+          >
             <h2>Modern</h2>
             <p>
               {" "}
@@ -109,7 +112,10 @@ const Carousels = (props) => {
           >
             {" "}
           </figure>
-          <section className={css.messageBox}>
+          <section
+            className={css.messageBox}
+            style={{ color: `${props.mycolor}` }}
+          >
             <h2>Modern</h2>
             <p>
               {" "}

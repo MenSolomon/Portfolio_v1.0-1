@@ -229,7 +229,7 @@ transition: 0.5s
               <TypeWriterEffect
                 textStyle={{ fontSize: "0.9em" }}
                 startDelay={50}
-                cursorColor="white"
+                cursorColor={color}
                 text="Hi, I am Michael Solomon "
                 typeSpeed={120}
 
